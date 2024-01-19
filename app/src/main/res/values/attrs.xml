@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="button_name">
+        <item>开屏广告</item>
+        <item>信息流广告</item>
+        <item>插屏广告</item>
+        <item>激励视频广告</item>
+        <item>Banner广告</item>
+    </string-array>
+</resources>

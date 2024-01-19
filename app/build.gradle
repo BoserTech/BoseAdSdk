@@ -1,0 +1,57 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+
+    compileSdkVersion 31
+
+    defaultConfig {
+        multiDexEnabled true
+        applicationId "com.bose.adsdk"
+        minSdkVersion 21
+        targetSdkVersion 31
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.4.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.44'
+
+    implementation files('libs/Lib_BS_Ads-V1.0.1-release.aar')
+
+    def room_version = "2.4.0"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    api 'com.github.bumptech.glide:glide:4.9.0'
+    api 'com.googlecode.android-query:android-query:0.25.9'
+    api 'com.squareup.okhttp3:okhttp:4.11.0'
+
+    api 'com.qq.e.union:union:4.532.1402'
+    api 'com.pangle.cn:ads-sdk-pro:5.6.1.5'
+}
