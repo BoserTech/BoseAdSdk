@@ -29,16 +29,40 @@ implementation 'com.github.bumptech.glide:glide:4.9.0'
 // okhttp
 implementation 'com.squareup.okhttp3:okhttp:4.11.0'
 ```
-##### 2.3 迁移至 AndroidX
+##### 2.3 AndroidManifest.xml配置
+```
+<!--必要权限 用户SDK可访问网络-->
+<uses-permission android:name="android.permission.INTERNET"/>
+
+<!--可选权限-->
+<!--用于SDK可获取网络状态变化，更及时的更新媒体广告位配置-->
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<!--用于SDK，在媒体允许的情况下，获取IMEI 标识用户的唯一性，有助于广告填充-->
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<!--用于SDK，在媒体允许的情况下，获取使用Wi-Fi等WLAN无线网，有助于广告精准投放-->
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<!--用于SDK，在媒体允许的情况下，获取位置信息，更精确的推送最有价值的广告-->
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<!--用于部分渲染广告图片缓存 -->
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<!--建议添加“query_all_package”权限，京东广告将通过此权限在Android R系统上判定广告对应的
+应用是否在用户的app上安装，避免投放错误的广告，以此提高用户的广告体验。若添加此权限，
+需要在您的用户隐私文档中声明！-->
+<uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+```
+>注意：广告SDK不强制获取以上权限，即使没有获取可选权限SDK也能正常运行；获取以上权限将帮助优化投放广告精准度和广告填充率，提高收益。
+##### 2.4 迁移至 AndroidX
 SDK当前使用AndroidX支持库。如果您的工程项目非AndroidX，可参考官网[升级AndroidX](https://developer.android.google.cn/jetpack/androidx/migrate?hl=zh-cn)，请在 gradle.properties ⽂件中 新增如下配置。
 ```# Android 插件会使用对应的 AndroidX 库而非支持库。
 android.useAndroidX=true
 # Android 插件会通过重写现有第三方库的二进制文件，自动将这些库迁移为使用 AndroidX。
 android.enableJetifier=true
 ```
->如果使用 Android Studio 3.2 及更高版本，您只需从菜单栏中依次选择 Refactor > Migrate to AndroidX，即可将现有项目迁移到 AndroidX。
+>注意：如果使用 Android Studio 3.2 及更高版本，您只需从菜单栏中依次选择 Refactor > Migrate to AndroidX，即可将现有项目迁移到 AndroidX。
 #### 3. SDK初始化
-请在您应用自定义Application类的onCreate()内调用以下方法进行SDK的初始化。
+建议开发者在Application#onCreate()方法内调用以下方法进行SDK的初始化。
 ```
 BSAdConfig config = new BSAdConfig.Builder()
         .setAppKey(appId)        // app_key请联系您的商务获取，必填
@@ -259,8 +283,10 @@ mBannerAd.loadAd();
 | 13003 |                  视频发生错误                   |     一般出现于激励视频广告播放过程中      |
 
 ### 更新日志
-|   版本   |     日期      | 说明                                                                  |
-|:------:|:-----------:|:--------------------------------------------------------------------|
-| 1.0.2  |  2024-1-18  | <br/>【增加】增加横幅广告</br> <br/>【优化】激励视频广告回调 </br> <br/>【BUG】解决bug。 </br> |
-| 1.0.1  |  2024-1-18  | <br/>【增加】增加激励视频广告</br> <br/>【优化】广告点击统计分析</br><br/>【BUG】修复已知问题</br>  |
-| 1.0.0  | 2023-11-25  | <br/>【优化】解决已知bug</br><br/>优化开屏、插屏、信息流</br>                          |
+|  版本   |     日期     | 说明                                                                  |
+|:-----:|:----------:|:--------------------------------------------------------------------|
+| 1.0.4 | 2024-3-13  | 修复已知问题                                                              |
+| 1.0.3 | 2024-2-29  | 【优化】广告请求、填充上报                                                       |
+| 1.0.2 | 2024-1-18  | <br/>【增加】增加横幅广告</br> <br/>【优化】激励视频广告回调 </br> <br/>【BUG】解决bug。 </br> |
+| 1.0.1 | 2024-1-18  | <br/>【增加】增加激励视频广告</br> <br/>【优化】广告点击统计分析</br><br/>【BUG】修复已知问题</br>  |
+| 1.0.0 | 2023-11-25 | <br/>【优化】解决已知bug</br><br/>优化开屏、插屏、信息流</br>                          |

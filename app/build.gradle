@@ -42,7 +42,7 @@ dependencies {
 
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.44'
 
-    implementation files('libs/Lib_BS_Ads-V1.0.1-release.aar')
+    implementation files('libs/Lib_BS_Ads-V1.0.3-release.aar')
 
     def room_version = "2.4.0"
     implementation "androidx.room:room-runtime:$room_version"
