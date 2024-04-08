@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBinding.setMyClick(this);
         String[] buttonNameArray = getResources().getStringArray(R.array.button_name);
         mButtonNames = Arrays.asList(buttonNameArray);
-        mBinding.mediaId.setText("您申请的APP_KEY");
+        mBinding.mediaId.setText("您申请的APP_ID");
         initView();
     }
 
