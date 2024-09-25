@@ -4,13 +4,13 @@ plugins {
 
 android {
 
-    compileSdkVersion 31
+    compileSdkVersion 34
 
     defaultConfig {
         multiDexEnabled true
         applicationId "com.bose.adsdk"
         minSdkVersion 21
-        targetSdkVersion 31
+        targetSdkVersion 34
         versionCode 1
         versionName "1.0"
     }
@@ -42,7 +42,7 @@ dependencies {
 
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.44'
 
-    implementation files('libs/Lib_BS_Ads-V1.0.4-release.aar')
+    implementation files('libs/Lib_BS_Ads-V1.1.0-release.aar')
 
     def room_version = "2.4.0"
     implementation "androidx.room:room-runtime:$room_version"
@@ -52,6 +52,6 @@ dependencies {
     api 'com.googlecode.android-query:android-query:0.25.9'
     api 'com.squareup.okhttp3:okhttp:4.11.0'
 
-    api 'com.qq.e.union:union:4.532.1402'
-    api 'com.pangle.cn:ads-sdk-pro:5.6.1.5'
+    api 'com.qq.e.union:union:4.580.1450'
+    api 'com.pangle.cn:ads-sdk-pro:6.3.1.0'
 }
