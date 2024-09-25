@@ -1,5 +1,5 @@
 # 博色广告 SDK
-[![Latest release](https://img.shields.io/github/v/release/BoserTech/BoseAdSdk.svg)](https://github.com/BoserTech/BoseAdSdk/releases/tag/V1.0.4)
+[![Latest release](https://img.shields.io/github/v/release/BoserTech/BoseAdSdk.svg)](https://github.com/BoserTech/BoseAdSdk/releases/tag/V1.1.0)
 
 ### 一、接入步骤
 >您可以参考接入文档查看更细说明
@@ -287,6 +287,7 @@ mBannerAd.loadAd();
 ### 更新日志
 |  版本   |     日期     | 说明                                                                  |
 |:-----:|:----------:|:--------------------------------------------------------------------|
+| 1.1.0 | 2024-9-25  | <br/>【兼容】优量汇：4.580.1450 <br/>【兼容】穿山甲：6.3.1.0 <br/>【兼容】快手：3.3.69 <br/>解决已知bug  |
 | 1.0.4 | 2024-3-13  | 修复已知问题                                                              |
 | 1.0.3 | 2024-2-29  | 【优化】广告请求、填充上报                                                       |
 | 1.0.2 | 2024-1-18  | <br/>【增加】增加横幅广告</br> <br/>【优化】激励视频广告回调 </br> <br/>【BUG】解决bug。 </br> |
