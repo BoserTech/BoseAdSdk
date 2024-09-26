@@ -1,5 +1,5 @@
 # 博色广告 SDK
-[![Latest release](https://img.shields.io/github/v/release/BoserTech/BoseAdSdk.svg)](https://github.com/BoserTech/BoseAdSdk/releases/tag/V1.1.0)
+[![Latest release](https://img.shields.io/github/v/release/BoserTech/BoseAdSdk.svg)](https://github.com/BoserTech/BoseAdSdk/releases/tag/v1.1.1)
 
 ### 一、接入步骤
 >您可以参考接入文档查看更细说明
